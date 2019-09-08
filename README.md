@@ -12,4 +12,5 @@
 9. Finally in the main class BankApplication, I create an object of BankAccountFactory and use method setinput(customerName, customerID, amount, notificationType)
 10. The setInput method returns an object of BankAccount.
 11. Here the user does not care about the implmentation of BankAccount, he is only concerned about using methods declared in interface.
+12. Testing: I have used **JUnit Testing** to test deposit, withdrawal, checkBalance, previousTransaction methods of BankAccount class.
 
