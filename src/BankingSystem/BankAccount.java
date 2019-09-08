@@ -7,6 +7,16 @@ class BankAccount implements BankAccountInterface{
 	private String customerName;
 	private String customerID;
 	
+	Observer sub;
+	
+	public void subscribe(Observer sub) {
+		this.sub = sub;
+	}
+	
+	public void notifySubscriber(String title) {
+			this.sub.update(title);
+	}
+	
 	public int getBalance() {
 		return balance;
 	}
@@ -52,6 +62,7 @@ class BankAccount implements BankAccountInterface{
 			balance += amount;
 			setBalance(balance);
 			setPreviousTransaction(amount);
+			notifySubscriber("deposited amount: " + amount);
 		}
 	}
 	
@@ -61,6 +72,7 @@ class BankAccount implements BankAccountInterface{
 			balance -= amount;
 			setBalance(balance);
 			setPreviousTransaction(-amount); 
+			notifySubscriber("withdrawn amount: " + amount);
 		}
 	}
 
