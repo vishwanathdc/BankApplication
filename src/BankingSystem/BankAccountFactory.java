@@ -1,7 +1,7 @@
 package BankingSystem;
 
 public class BankAccountFactory {
-	public BankAccountInterface getInput(String name, String id, Integer amount, String notificationType) {
+	public BankAccountInterface setInput(String name, String id, Integer amount, String notificationType) {
 		if(name == null || id == null || amount == null || notificationType == null)
 			return null;
 		else {

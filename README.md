@@ -8,8 +8,8 @@
 7. I have used **Factory method pattern** to create objects of BankAccount. This avoids the direct use of BankAccount constructor. This also helps in validation of input and establishing connection between publisher and ubscriber for Observer pattern.
 8. I have used **Observer pattern**, here the observer interface listens to the changes in class BankAccount and sends notifications whenever deposit/withdrawal is made.
 9. The subscriber is an **abstract class**, it is extended by EmailSubscriber and SmsSubscriber to have their **own definition of display method** which is an abstract method in Subscriber class.
-8. BankAccountFactory getInput method generates the BankAccount object only if customerName, customerID, amount, notificationType is not empty.
-9. Finally in the main class BankApplication, I create an object of BankAccountFactory and use method getInput(customerName, customerID, amount)
-10. The getInput method returns an object of BankAccount.
+8. BankAccountFactory setInput method generates the BankAccount object only if customerName, customerID, amount, notificationType is not empty.
+9. Finally in the main class BankApplication, I create an object of BankAccountFactory and use method setinput(customerName, customerID, amount, notificationType)
+10. The setInput method returns an object of BankAccount.
 11. Here the user does not care about the implmentation of BankAccount, he is only concerned about using methods declared in interface.
 
