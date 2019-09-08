@@ -1,12 +1,12 @@
 package BankingSystem;
 
 public class BankAccountFactory {
-	public BankAccountInterface getInput(String name, String id, Integer amount, String notifier) {
-		if(name == null || id == null || amount == null || notifier == null)
+	public BankAccountInterface getInput(String name, String id, Integer amount, String notificationType) {
+		if(name == null || id == null || amount == null || notificationType == null)
 			return null;
 		else {
 			Observer s1;
-			if(notifier == "email")
+			if(notificationType == "email")
 				s1 = new EmailSubscriber(name);
 			else
 			    s1 = new SmsSubscriber(name);
