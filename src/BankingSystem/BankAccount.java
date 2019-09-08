@@ -1,7 +1,7 @@
 package BankingSystem;
 import java.util.Scanner;
 
-class BankAccount implements BankAccountInterface{
+public class BankAccount implements BankAccountInterface{
 	private int balance;
 	private int previousTransaction;
 	private String customerName;
