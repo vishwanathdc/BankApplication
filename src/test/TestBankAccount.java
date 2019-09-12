@@ -44,4 +44,9 @@ class TestBankAccount {
 		ba.deposit(3000);
 		assertEquals(4000, ba.getBalance(), "checking balance");
 	}
+	
+	@Test
+	public void testCalculateInterest() {
+		assertEquals(20, ba.calculateInterest(1000, 1));
+	}
 }

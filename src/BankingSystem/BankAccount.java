@@ -84,6 +84,18 @@ public class BankAccount implements BankAccountInterface{
 			System.out.println("amount deposited: " + previousTransaction);
 	}
 	
+	public Double calculateInterest(int amount, int year) {
+		String custID = getCustomerID();
+		int rate;
+		if(custID.charAt(0) == '1') {
+			rate = 2;
+			return (double) ((amount * year * rate)/100);
+		}else {
+			rate = 3;
+			return (double) ((amount * year * rate)/100);
+		}
+	}
+	
 	public void showMenu() {
 		int choice = 0;
 		Scanner sc = new Scanner(System.in);
@@ -94,7 +106,8 @@ public class BankAccount implements BankAccountInterface{
 		System.out.println("2. Withdraw");
 		System.out.println("3. Check balance");
 		System.out.println("4. Previous Transaction");
-		System.out.println("5. Exit");
+		System.out.println("5. Calculate interest");
+		System.out.println("6. Exit");
 		
 		do {
 			System.out.println("*********************************************************");
@@ -133,6 +146,19 @@ public class BankAccount implements BankAccountInterface{
 					break;
 				case 5:
 					System.out.println("**********************");
+					System.out.println("Enter the amount to calculate interest");
+					System.out.println("**********************");
+					int amountToInterest  = sc.nextInt();
+					System.out.println("**********************");
+					System.out.println("Enter number of years to calculate interest");
+					System.out.println("**********************");
+					int yearToInterest  = sc.nextInt();
+					System.out.println("**********************");
+					System.out.println("Your interest: " + calculateInterest(amountToInterest, yearToInterest));
+					System.out.println("**********************");
+					break;
+				case 6:
+					System.out.println("**********************");
 					break;
 				default:
 					System.out.println("**********************");
@@ -142,7 +168,7 @@ public class BankAccount implements BankAccountInterface{
 					break;
 			}
 			
-		}while(choice != 5);
+		}while(choice != 6);
 		System.out.println("Thank you for using our services. Good bye!");
 	}
 
